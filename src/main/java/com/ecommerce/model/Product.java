@@ -1,6 +1,17 @@
 package com.ecommerce.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "products")
 public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String productName;
 	private String description;
@@ -8,11 +19,15 @@ public class Product {
 	private double price;
 	private int quantity;
 	
+	@ManyToOne
+	private User user;
+	
 	public Product() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(Integer id, String productName, String description, String image, double price, int quantity) {
+	public Product(Integer id, String productName, String description, String image, double price, int quantity,
+			User user) {
 		super();
 		this.id = id;
 		this.productName = productName;
@@ -20,6 +35,7 @@ public class Product {
 		this.image = image;
 		this.price = price;
 		this.quantity = quantity;
+		this.user = user;
 	}
 
 	public Integer getId() {
@@ -68,6 +84,14 @@ public class Product {
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override
