@@ -18,10 +18,10 @@ public class Product {
 	private String image;
 	private double price;
 	private int quantity;
-	
+
 	@ManyToOne
 	private User user;
-	
+
 	public Product() {
 		// TODO Auto-generated constructor stub
 	}
@@ -99,6 +99,5 @@ public class Product {
 		return "Product [id=" + id + ", productName=" + productName + ", description=" + description + ", image="
 				+ image + ", price=" + price + ", quantity=" + quantity + "]";
 	}
-	
-	
+
 }

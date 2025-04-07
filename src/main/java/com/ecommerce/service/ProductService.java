@@ -1,5 +1,6 @@
 package com.ecommerce.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.ecommerce.model.Product;
@@ -9,4 +10,5 @@ public interface ProductService {
 	public Optional<Product> get(Integer id);
 	public void update(Product product);
 	public void delete(Integer id);
+	public List<Product> findAll();
 }

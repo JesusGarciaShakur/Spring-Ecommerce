@@ -21,17 +21,17 @@ public class User {
 	private String numberPhone;
 	private String type;
 	private String password;
-	
+
 	@OneToMany(mappedBy = "user")
 	private List<Product> products;
-	
+
 	@OneToMany(mappedBy = "user")
 	private List<Order> orders;
-	
+
 	public User() {
-		
+
 	}
-	
+
 	public User(Integer id, String name, String userName, String email, String numberPhone, String type,
 			String password, List<Product> products) {
 		super();
@@ -48,42 +48,55 @@ public class User {
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getUserName() {
 		return userName;
 	}
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getNumberPhone() {
 		return numberPhone;
 	}
+
 	public void setNumberPhone(String numberPhone) {
 		this.numberPhone = numberPhone;
 	}
+
 	public String getType() {
 		return type;
 	}
+
 	public void setType(String type) {
 		this.type = type;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -101,5 +114,5 @@ public class User {
 		return "User [id=" + id + ", name=" + name + ", userName=" + userName + ", email=" + email + ", numberPhone="
 				+ numberPhone + ", type=" + type + ", password=" + password + "]";
 	}
-	
+
 }
